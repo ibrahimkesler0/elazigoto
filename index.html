@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gold Oto Kiralama | Elazığ 7/24 Premium Araç Kiralama</title>
+    <meta
+      name="description"
+      content="Elazığ Gold Oto Kiralama: 5,0 Google puanı, 7/24 kesintisiz araç teslimatı, Elazığ Havalimanı karşılama, tam kaskolu ve bakımlı genç araç filosu. Hemen rezervasyon yapın."
+    />
+    <meta name="theme-color" content="#07080b" />
+    <meta property="og:title" content="Gold Oto Kiralama | Elazığ 7/24 Premium Araç Kiralama" />
+    <meta
+      property="og:description"
+      content="Elazığ'da sürüşün altın standardı. 5,0 Google puanı, 7/24 havalimanı ve merkez teslimatı, tam kaskolu genç filo."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Fixed Full-Site Continuous 3D WebGL Stage -->
+    <canvas id="stage-canvas" aria-hidden="true"></canvas>
+    <div class="stage-vignette" aria-hidden="true"></div>
+
+    <!-- Preloader with Live 3D Model Loading Progress -->
+    <div class="preloader" id="preloader" aria-live="polite">
+      <div class="preloader__inner">
+        <div class="preloader__ring">
+          <svg viewBox="0 0 88 88" aria-hidden="true">
+            <circle class="preloader__track" cx="44" cy="44" r="40" />
+            <circle class="preloader__fill" id="preloader-fill" cx="44" cy="44" r="40" />
+          </svg>
+          <span class="preloader__monogram">G</span>
+        </div>
+        <div class="preloader__brand">GOLD OTO KİRALAMA</div>
+        <div class="preloader__sub">
+          <span id="preloader-label">3D Showroom Hazırlanıyor</span>
+          <span class="mono" id="preloader-pct">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="container header__inner">
+        <a href="#top" class="brand" aria-label="Gold Oto Kiralama ana sayfa">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40">
+              <defs>
+                <linearGradient id="gold-grad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#f7e39c" />
+                  <stop offset="50%" stop-color="#d4af37" />
+                  <stop offset="100%" stop-color="#96701c" />
+                </linearGradient>
+              </defs>
+              <rect x="1.5" y="1.5" width="37" height="37" rx="10" fill="rgba(212,175,55,0.08)" stroke="url(#gold-grad)" stroke-width="1.5" />
+              <path d="M27.6 15.2A9.2 9.2 0 1 0 29.2 20h-8.4v-3.2h12V20a12.8 12.8 0 1 1-3.1-8.4l-2.1 3.6Z" fill="url(#gold-grad)" />
+            </svg>
+          </span>
+          <span class="brand__text">
+            <strong>GOLD OTO</strong>
+            <small>Elazığ · 7/24 Kiralama</small>
+          </span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Ana menü">
+          <a href="#showroom">3D Showroom</a>
+          <a href="#filo">Filo</a>
+          <a href="#hizmetler">Hizmetler</a>
+          <a href="#surec">Süreç</a>
+          <a href="#yorumlar">Yorumlar</a>
+          <a href="#sss">SSS</a>
+          <a href="#iletisim">İletişim</a>
+        </nav>
+
+        <div class="header__actions">
+          <a class="btn btn--gold" data-phone-link href="#iletisim">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"
+                fill="currentColor"
+              />
+            </svg>
+            <span>Hemen Ara</span>
+          </a>
+          <button class="burger" id="burger" aria-label="Menüyü aç" aria-expanded="false">
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Right-side 3D Scroll Chapter Telemetry Rail -->
+    <aside class="chapter-rail" id="chapter-rail" aria-label="Bölüm göstergesi"></aside>
+
+    <main id="top">
+      <!-- CHAPTER 01: HERO -->
+      <section class="chapter chapter--hero" data-stage="hero" id="hero">
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <div class="eyebrow reveal">
+              <span class="pulse-dot"></span>
+              <span>ELAZIĞ MERKEZ · 7/24 KESİNTİSİZ HİZMET</span>
+            </div>
+
+            <h1 class="hero__title reveal">
+              Elazığ'da sürüşün<br />
+              <em>altın standardı.</em>
+            </h1>
+
+            <p class="hero__lead reveal">
+              Tam kaskolu, periyodik bakımlı ve tertemiz genç araç filomuzla Hürriyet Caddesi ofisimizden veya Elazığ Havalimanı'ndan 7/24 dakikalar içinde yola çıkın.
+            </p>
+
+            <div class="hero__actions reveal">
+              <a class="btn btn--gold btn--lg" data-whatsapp-link target="_blank" rel="noopener" href="#iletisim">
+                <svg viewBox="0 0 32 32" aria-hidden="true">
+                  <path
+                    fill="currentColor"
+                    d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7a10.7 10.7 0 0 1-5.5-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.5 6.5 0 0 0 1.3 3.4 14.7 14.7 0 0 0 5.7 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c0-.2-.3-.3-.6-.5z"
+                  />
+                </svg>
+                <span>WhatsApp Rezervasyon</span>
+              </a>
+              <a href="#showroom" class="btn btn--glass btn--lg">
+                <span>3D Showroom'u Keşfet</span>
+                <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+
+            <div class="hero__metrics reveal">
+              <a class="rating-badge" data-maps-link target="_blank" rel="noopener" href="#yorumlar">
+                <span class="g-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48">
+                    <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z" />
+                    <path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z" />
+                    <path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2c-2 1.5-4.6 2.4-7.2 2.4-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z" />
+                    <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="rating-badge__top">
+                    <strong data-rating>5,0</strong>
+                    <span class="stars" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+                  </div>
+                  <small><span data-review-count>29</span> Google yorumunun tamamı 5★</small>
+                </div>
+              </a>
+
+              <div class="metric-sep" aria-hidden="true"></div>
+
+              <div class="metric-item">
+                <strong class="mono">7/24</strong>
+                <small>Havalimanı &amp; Merkez Teslim</small>
+              </div>
+
+              <div class="metric-sep" aria-hidden="true"></div>
+
+              <div class="metric-item">
+                <strong class="mono">%100</strong>
+                <small>Rent A Car Kaskolu</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true">
+          <span>KAYDIRIN · 3D TUR BAŞLASIN</span>
+          <i class="scroll-cue__line"></i>
+        </div>
+      </section>
+
+      <!-- CHAPTER 02: INTERACTIVE 3D SHOWROOM -->
+      <section class="chapter chapter--showroom" data-stage="showroom" id="showroom">
+        <div class="container showroom__layout">
+          <div class="showroom__header reveal">
+            <span class="kicker">02 · İNTERAKTİF 3D SHOWROOM</span>
+            <h2 class="section-title">Her açıdan <em>kusursuz</em> detay.</h2>
+          </div>
+
+          <!-- Open Transparent Interactive Orbit Viewport Zone -->
+          <div class="showroom__orbit-zone" id="orbit-zone" aria-label="3D aracı döndürmek için sürükleyin">
+            <span class="orbit-hint">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0 0 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 0 0 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" />
+              </svg>
+              360° incelemek için sürükleyin
+            </span>
+          </div>
+
+          <!-- Interactive 3D Dock: Live Paint, Camera Angles & Headlights -->
+          <div class="showroom__dock reveal">
+            <div class="dock-group">
+              <span class="dock-label">GÖVDE RENGİ</span>
+              <div class="paint-swatches" id="paint-swatches" role="radiogroup" aria-label="Araç boya rengi"></div>
+            </div>
+
+            <div class="dock-divider" aria-hidden="true"></div>
+
+            <div class="dock-group">
+              <span class="dock-label">KAMERA AÇISI</span>
+              <div class="angle-buttons" id="angle-buttons">
+                <button type="button" class="pill-btn is-active" data-angle="front">Ön 3/4</button>
+                <button type="button" class="pill-btn" data-angle="side">Yan Profil</button>
+                <button type="button" class="pill-btn" data-angle="rear">Arka</button>
+                <button type="button" class="pill-btn" data-angle="top">Üstten</button>
+                <button type="button" class="pill-btn" data-angle="spin">360° Tur</button>
+              </div>
+            </div>
+
+            <div class="dock-divider" aria-hidden="true"></div>
+
+            <div class="dock-group">
+              <span class="dock-label">AYDINLATMA</span>
+              <button type="button" class="pill-btn pill-btn--toggle is-active" id="headlight-toggle" aria-pressed="true">
+                <span class="led-dot"></span> LED Farlar
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 03: FLEET SHOWCASE -->
+      <section class="chapter chapter--right" data-stage="filo" id="filo">
+        <div class="container chapter__split chapter__split--right">
+          <div class="chapter__panel">
+            <span class="kicker reveal">03 · ARAÇ FİLOMUZ</span>
+            <h2 class="section-title reveal">Her yolculuğa uygun <em>genç filo.</em></h2>
+            <p class="section-lead reveal">
+              Şehir içi ekonomik sedanlardan geniş bagajlı SUV ve aile araçlarına kadar tüm araçlarımız teslimat öncesi detaylı hijyen ve mekanik kontrolden geçer.
+            </p>
+
+            <div class="fleet-filters reveal" id="fleet-filters" role="tablist" aria-label="Araç segment filtresi">
+              <button type="button" class="filter-tab is-active" data-filter="all">Tümü</button>
+              <button type="button" class="filter-tab" data-filter="suv">SUV &amp; VIP</button>
+              <button type="button" class="filter-tab" data-filter="sedan">Konfor Sedan</button>
+              <button type="button" class="filter-tab" data-filter="ekonomik">Ekonomik</button>
+              <button type="button" class="filter-tab" data-filter="ticari">Aile / Geniş</button>
+            </div>
+
+            <div class="fleet-grid" id="fleet-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 04: SERVICES (HIGHWAY MOTION SCENE) -->
+      <section class="chapter chapter--left" data-stage="hizmetler" id="hizmetler">
+        <div class="container chapter__split chapter__split--left">
+          <div class="chapter__panel">
+            <span class="kicker reveal">04 · HİZMETLERİMİZ</span>
+            <h2 class="section-title reveal">Sadece araç değil, <em>kusursuz konfor.</em></h2>
+            <p class="section-lead reveal">
+              Elazığ'da araç kiralamanın her anında hız, güven ve şeffaflık sunuyoruz. İster iş seyahati, ister aile tatili — yanınızdayız.
+            </p>
+
+            <div class="services-grid" id="services-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 05: 3-STEP PROCESS (TOP-DOWN ARCHITECTURAL ANGLE) -->
+      <section class="chapter chapter--center" data-stage="surec" id="surec">
+        <div class="container">
+          <div class="section-head section-head--center reveal">
+            <span class="kicker">05 · KİRALAMA SÜRECİ</span>
+            <h2 class="section-title">Üç adımda <em>anahtar elinizde.</em></h2>
+            <p class="section-lead">Karmaşık prosedürler yok. Aracınızı seçin, onaylayın ve tam saatinde yola çıkın.</p>
+          </div>
+
+          <div class="steps-grid" id="steps-grid"></div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 06: REAL GOOGLE REVIEWS (REAR 3/4 TAILLIGHT GLOW) -->
+      <section class="chapter chapter--right" data-stage="yorumlar" id="yorumlar">
+        <div class="container chapter__split chapter__split--right">
+          <div class="chapter__panel chapter__panel--wide">
+            <div class="reviews-head reveal">
+              <div>
+                <span class="kicker">06 · MÜŞTERİ DENEYİMLERİ</span>
+                <h2 class="section-title">Google'da <em>5,0 tam puan.</em></h2>
+                <p class="section-lead">Elazığ'da bizi tercih eden misafirlerimizin gerçek Google Haritalar yorumları.</p>
+              </div>
+              <div class="reviews-nav">
+                <button type="button" class="icon-btn" id="rev-prev" aria-label="Önceki yorum">←</button>
+                <button type="button" class="icon-btn" id="rev-next" aria-label="Sonraki yorum">→</button>
+              </div>
+            </div>
+
+            <div class="swiper reviews-swiper reveal" id="reviews-swiper">
+              <div class="swiper-wrapper" id="reviews-wrapper"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+
+            <div class="reviews-foot reveal">
+              <a class="btn btn--glass" data-maps-link target="_blank" rel="noopener" href="#iletisim">
+                Tüm <span data-review-count>29</span> Google Yorumunu Gör ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 07: FAQ -->
+      <section class="chapter chapter--left" data-stage="sss" id="sss">
+        <div class="container chapter__split chapter__split--left">
+          <div class="chapter__panel">
+            <span class="kicker reveal">07 · SIK SORULAN SORULAR</span>
+            <h2 class="section-title reveal">Merak <em>edilenler.</em></h2>
+            <p class="section-lead reveal">Kiralama koşulları, havalimanı teslimatı ve kasko güvencesi hakkında hızlı yanıtlar.</p>
+
+            <div class="faq-list" id="faq-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 08: CONTACT & LOCATION -->
+      <section class="chapter chapter--contact" data-stage="iletisim" id="iletisim">
+        <div class="container">
+          <!-- High-impact Booking Banner -->
+          <div class="cta-band reveal">
+            <div>
+              <span class="kicker">7/24 ANINDA REZERVASYON</span>
+              <h2>Elazığ'da güvenilir araç arıyorsanız, <em>hemen hazırız.</em></h2>
+              <p>Uygun araç ve güncel fiyat bilgisi için bizi doğrudan arayın veya WhatsApp'tan yazın.</p>
+            </div>
+            <div class="cta-band__actions">
+              <a class="btn btn--gold btn--lg" data-phone-link href="tel:+905348753794">
+                <span data-phone-text>0 (534) 875 37 94</span>
+              </a>
+              <a class="btn btn--whatsapp btn--lg" data-whatsapp-link target="_blank" rel="noopener" href="#">
+                WhatsApp ile Yazın ↗
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-grid">
+            <div class="glass-card contact-card reveal">
+              <span class="kicker">08 · İLETİŞİM &amp; OFİSİMİZ</span>
+              <h2 class="section-title">Bizi <em>ziyaret</em> edin.</h2>
+
+              <ul class="contact-list">
+                <li>
+                  <span class="contact-ic" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" /></svg>
+                  </span>
+                  <div>
+                    <small>Adres</small>
+                    <a data-maps-link target="_blank" rel="noopener" data-address></a>
+                    <span class="contact-sub" data-landmark></span>
+                  </div>
+                </li>
+
+                <li>
+                  <span class="contact-ic" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" /></svg>
+                  </span>
+                  <div>
+                    <small>7/24 Rezervasyon Hattı</small>
+                    <a data-phone-link data-phone-text></a>
+                  </div>
+                </li>
+
+                <li>
+                  <span class="contact-ic" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" /></svg>
+                  </span>
+                  <div>
+                    <small>Instagram</small>
+                    <a data-instagram-link target="_blank" rel="noopener">@gold_oto_kiralama</a>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="hours-box">
+                <div class="hours-box__head">
+                  <h3>Çalışma Saatleri</h3>
+                  <span class="open-pill"><span class="pulse-dot"></span> Şimdi Açık · 7/24</span>
+                </div>
+                <ul class="hours-list" id="hours-list"></ul>
+              </div>
+            </div>
+
+            <div class="glass-card map-card reveal">
+              <iframe
+                id="map-frame"
+                title="Gold Oto Kiralama Elazığ Harita Konumu"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+              <div class="map-card__bar">
+                <span class="mono">38.6742° N · 39.2263° E</span>
+                <a class="btn btn--gold" data-directions-link target="_blank" rel="noopener">Yol Tarifi Al ↗</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <a href="#top" class="brand">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 40 40">
+                <rect x="1.5" y="1.5" width="37" height="37" rx="10" fill="rgba(212,175,55,0.08)" stroke="#d4af37" stroke-width="1.5" />
+                <path d="M27.6 15.2A9.2 9.2 0 1 0 29.2 20h-8.4v-3.2h12V20a12.8 12.8 0 1 1-3.1-8.4l-2.1 3.6Z" fill="#d4af37" />
+              </svg>
+            </span>
+            <span class="brand__text">
+              <strong>GOLD OTO KİRALAMA</strong>
+              <small>Elazığ · 7/24 Premium Filo</small>
+            </span>
+          </a>
+          <p>Elazığ Merkez'de 7/24 kesintisiz, tam kaskolu ve bakımlı araç kiralama hizmeti.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Keşfet</h4>
+          <a href="#showroom">3D Showroom</a>
+          <a href="#filo">Araç Filosu</a>
+          <a href="#hizmetler">Hizmetler</a>
+          <a href="#yorumlar">Müşteri Yorumları</a>
+          <a href="#iletisim">İletişim</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>İletişim</h4>
+          <a data-phone-link data-phone-text></a>
+          <a data-instagram-link target="_blank" rel="noopener">@gold_oto_kiralama</a>
+          <a data-maps-link target="_blank" rel="noopener" data-address></a>
+        </div>
+      </div>
+
+      <div class="container footer__bottom">
+        <span>© <span id="year"></span> Gold Oto Kiralama Elazığ. Tüm hakları saklıdır.</span>
+        <span class="footer__credit">
+          3D Model:
+          <a href="https://sketchfab.com/3d-models/bmw-m4-competition-m-package-5c0a2dafb1ad408d9fc9eeef9aee531b" target="_blank" rel="noopener">
+            BMW M4 Competition
+          </a>
+          by SRT Perfomance™ (<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>)
+        </span>
+        <a href="#top" class="back-top">Yukarı ↑</a>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Quick Action -->
+    <a class="fab-whatsapp" data-whatsapp-link target="_blank" rel="noopener" aria-label="WhatsApp ile rezervasyon yapın" href="#iletisim">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7a10.7 10.7 0 0 1-5.5-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-1-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.5 6.5 0 0 0 1.3 3.4 14.7 14.7 0 0 0 5.7 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c0-.2-.3-.3-.6-.5z"
+        />
+      </svg>
+    </a>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
