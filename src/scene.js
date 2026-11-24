@@ -42,9 +42,9 @@ const STAGE_KEYS = {
     dist: 7.55,
     shiftX: -1.68, // Car cleanly framed on the right with breathing room from hero text
     shiftY: 0.56,
-    mobileDist: 8.2,
+    mobileDist: 6.5,
     mobileShiftX: 0.0,
-    mobileShiftY: 0.25,
+    mobileShiftY: -0.45, // Lifts car cleanly into the upper-mid hero showcase window
     headlight: 2.3,
     taillight: 0.9,
     ringOpacity: 0.72,
@@ -57,9 +57,9 @@ const STAGE_KEYS = {
     dist: 6.45,
     shiftX: 0.0, // Car dead-center hero showcase
     shiftY: 0.54,
-    mobileDist: 7.6,
+    mobileDist: 6.65,
     mobileShiftX: 0.0,
-    mobileShiftY: 0.5,
+    mobileShiftY: 0.22, // Keeps entire car + ring cleanly above the compact mobile dock
     headlight: 2.2,
     taillight: 1.4,
     ringOpacity: 0.95,
@@ -72,9 +72,9 @@ const STAGE_KEYS = {
     dist: 8.5,
     shiftX: 1.95, // Car cleanly framed on the LEFT half; Fleet cards on RIGHT
     shiftY: 0.55,
-    mobileDist: 9.2,
+    mobileDist: 7.6,
     mobileShiftX: 0.0,
-    mobileShiftY: 0.4,
+    mobileShiftY: 0.45,
     headlight: 1.7,
     taillight: 1.3,
     ringOpacity: 0.42,
@@ -87,9 +87,9 @@ const STAGE_KEYS = {
     dist: 8.35,
     shiftX: -1.85, // Car cleanly framed on the RIGHT half; Services cards on LEFT
     shiftY: 0.52,
-    mobileDist: 9.0,
+    mobileDist: 7.4,
     mobileShiftX: 0.0,
-    mobileShiftY: 0.35,
+    mobileShiftY: 0.45,
     headlight: 3.1,
     taillight: 1.4,
     ringOpacity: 0.18,
@@ -102,9 +102,9 @@ const STAGE_KEYS = {
     dist: 8.6,
     shiftX: 0.0,
     shiftY: 0.32,
-    mobileDist: 9.6,
+    mobileDist: 7.6,
     mobileShiftX: 0.0,
-    mobileShiftY: 0.28,
+    mobileShiftY: 0.35,
     headlight: 1.5,
     taillight: 2.0,
     ringOpacity: 0.85,
@@ -117,9 +117,9 @@ const STAGE_KEYS = {
     dist: 8.45,
     shiftX: 1.95, // Car cleanly framed on the LEFT half; Reviews Swiper on RIGHT
     shiftY: 0.56,
-    mobileDist: 9.2,
+    mobileDist: 7.5,
     mobileShiftX: 0.0,
-    mobileShiftY: 0.4,
+    mobileShiftY: 0.45,
     headlight: 1.0,
     taillight: 3.4,
     ringOpacity: 0.42,
@@ -132,9 +132,9 @@ const STAGE_KEYS = {
     dist: 8.5,
     shiftX: -1.9, // Car cleanly framed on the RIGHT half; FAQ accordion on LEFT
     shiftY: 0.55,
-    mobileDist: 9.2,
+    mobileDist: 7.6,
     mobileShiftX: 0.0,
-    mobileShiftY: 0.4,
+    mobileShiftY: 0.45,
     headlight: 1.4,
     taillight: 2.6,
     ringOpacity: 0.48,
@@ -147,7 +147,7 @@ const STAGE_KEYS = {
     dist: 8.75,
     shiftX: 0.0,
     shiftY: 0.55,
-    mobileDist: 9.6,
+    mobileDist: 7.8,
     mobileShiftX: 0.0,
     mobileShiftY: 0.45,
     headlight: 2.8,
@@ -692,7 +692,7 @@ export function initCarStage(canvas, callbacks = {}) {
       if (!showroomOverride) {
         showroomTargetYaw = curYaw;
         showroomTargetPitch = curPitch;
-        showroomTargetDist = isMobile ? 7.6 : 6.45;
+        showroomTargetDist = isMobile ? STAGE_KEYS.showroom.mobileDist : STAGE_KEYS.showroom.dist;
       }
       showroomOverride = true;
       autoSpinShowroom = false;
@@ -719,6 +719,7 @@ export function initCarStage(canvas, callbacks = {}) {
   const lookTarget = new THREE.Vector3();
   const rightVec = new THREE.Vector3();
   let isMobile = window.innerWidth < 960;
+  let portraitMult = 1;
 
   function resize() {
     const w = window.innerWidth;
@@ -726,13 +727,22 @@ export function initCarStage(canvas, callbacks = {}) {
     isMobile = w < 960;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
-    camera.fov = isMobile ? 42 : 35;
+    // Portrait phones have narrow horizontal FOV; boost vertical FOV and scale distance
+    // dynamically so 100% of the 4.65m BMW M4 fits side-to-side even in full Yan profile!
+    const isPortrait = camera.aspect < 1.0;
+    camera.fov = isPortrait ? 46 : isMobile ? 40 : 35;
+    portraitMult = isPortrait ? Math.max(1.0, 0.98 / Math.max(camera.aspect, 0.42)) : 1.0;
     camera.updateProjectionMatrix();
     measureSections();
   }
   window.addEventListener("resize", resize);
   window.addEventListener("load", measureSections);
   resize();
+
+  // Snap initial spherical values so first frame opens cleanly on mobile & desktop
+  curDist = (isMobile ? STAGE_KEYS.hero.mobileDist : STAGE_KEYS.hero.dist) * portraitMult;
+  curShiftX = isMobile ? STAGE_KEYS.hero.mobileShiftX : STAGE_KEYS.hero.shiftX;
+  curShiftY = isMobile ? STAGE_KEYS.hero.mobileShiftY : STAGE_KEYS.hero.shiftY;
 
   function sampleScrollStage() {
     if (!sections.length) return STAGE_KEYS.hero;
@@ -781,7 +791,7 @@ export function initCarStage(canvas, callbacks = {}) {
     return {
       yaw: lerp(a.yaw, b.yaw, t),
       pitch: lerp(a.pitch, b.pitch, t),
-      dist: lerp(isMobile ? a.mobileDist : a.dist, isMobile ? b.mobileDist : b.dist, t),
+      dist: lerp(isMobile ? a.mobileDist : a.dist, isMobile ? b.mobileDist : b.dist, t) * portraitMult,
       shiftX: lerp(isMobile ? a.mobileShiftX : a.shiftX, isMobile ? b.mobileShiftX : b.shiftX, t),
       shiftY: lerp(isMobile ? a.mobileShiftY : a.shiftY, isMobile ? b.mobileShiftY : b.shiftY, t),
       headlight: lerp(a.headlight, b.headlight, t),
@@ -825,9 +835,9 @@ export function initCarStage(canvas, callbacks = {}) {
       }
       goalYaw = showroomTargetYaw;
       goalPitch = showroomTargetPitch;
-      goalDist = isMobile ? showroomTargetDist + 1.15 : showroomTargetDist;
+      goalDist = showroomTargetDist * portraitMult;
       goalShiftX = 0;
-      goalShiftY = 0.54;
+      goalShiftY = isMobile ? STAGE_KEYS.showroom.mobileShiftY : 0.54;
     } else if (!reduceMotion) {
       // Gentle living showcase motion + pointer parallax
       goalYaw += Math.sin(elapsed * 0.42) * 0.045 + pointer.x * 0.075;
